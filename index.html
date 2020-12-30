@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rajweb.ml</title>
+	<link rel="icon" type="text/icon" href="126208086_3692832380779597_3926534053824948199_n.jpg">
+</head>
+<body bgcolor="#8c7ae6">
+	<div class="loader">
+		<img src="Double Ring-1s-200px.gif">
+    </div>
+<header>
+	<nav>
+		<div class="logo"> <h1 class="animate__heartBeat">RAJ</h1></div>
+		<div class="menu">
+			<a href="gallery.html"> gallery</a>
+			<a href="https://www.facebook.com/SriDurgaTempleMelbourne" target="_blank" >my job</a>
+		</div>
+	</nav>
+		<main>
+			<section>
+				<h4 class="animate__heartBeat"> WELCOME TO RAJ</h4>	<h2>WEBSITE</h2>			<a href="https://www.facebook.com/profile.php?id=100001586135190" class="btntwo" target="_blank"><b>FOLLOW MEE</b></a>
+			</section>
+		</main>
+</header>
+<script type="text/javascript">
+	var loader = document.querySelector(".loader")
+
+window.addEventListener("load", vanish);
+
+function vanish() {
+  loader.classList.add("disppear");
+}
+</script>
+<style type="text/css">
+
+
+*{
+	padding: 0;
+	margin: 0;
+}
+header{
+	width: 100%;
+	height: 100vh;
+	background-image: url(img/123.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+nav{
+	width: 100%;
+	height: 15vh;
+	background: rgba(0,0,0,0.2);
+	color: white; display: flex; justify-content: space-between;
+	align-items: center; text-transform: uppercase;
+}
+nav .logo{
+	width: 25%; color: white; text-align: center;
+}
+nav .menu{
+	font-size: 27px;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+}
+nav .menu a{
+	width: 25%;
+	text-decoration: none;
+	color: white;
+ font-weight: bold;
+}
+
+main{
+	width: 100%;
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	color: white;
+	text-align: center;
+}
+
+section h4{
+	font-size: 65px;
+	font-weight: 200;
+	letter-spacing: 3;
+	text-shadow: 2px 1px 5px black; 
+	margin-bottom: 0px;
+}
+section h2{
+	margin: 30px 0 20px 0;
+	font-size: 55px;
+	font-weight: 700;
+	text-shadow: 2px 1px 5px black;
+	text-transform: uppercase;
+}
+section a{
+	padding: 12px 30px;
+	border-radius: 4px;
+	outline: none;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	text-decoration: none;
+	letter-spacing: 1px;
+	color: white;
+}
+section .btntwo{
+	background: #ffffff;
+	color: black;
+}
+.btntwo hover {
+background: #000;
+	color: white;
+}
+.btnone: hover {
+	background: #fff;
+	color: black;
+}
+section .btnone{
+	background: #6c5ce7; 
+	color: white;
+}
+.change_content:after{
+	content: '';
+	animation: changetext 10s infinite linear;
+
+}
+@keyframes changetext{
+	0%{content:"channel";}
+	100%{content:"world";}
+}
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disppear{
+  animation: vanish 1s forwards;
+}
+@keyframes vanish {
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+</style>
+</body>
+</html>

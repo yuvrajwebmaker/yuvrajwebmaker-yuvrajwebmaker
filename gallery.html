@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gallery</title>
+<link rel="icon" type="text/icon" href="126208086_3692832380779597_3926534053824948199_n.jpg"><script src="https://kit.fontawesome.com/08bb8517dc.js" crossorigin="anonymous"></script>
+</head>
+<body bgcolor="#8c7ae6"> <button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
+	<nav>
+		<div class="logo"> <h1 class="animate__heartBeat"><a class="logob" href="index.html">BACK</a></h1></div>
+	</nav>
+	<hr>
+	<div class="photos">
+		<div class="landscape">
+			<img class="landscape" src="img/2bee2529-1e8c-4d86-bd45-786c2f0cdcda.jfif">
+			<hr>
+			<img class="landscape" src="img/4d6428a5-43aa-4990-a00c-c34f42e303a4.jfif">
+			<hr>
+			<img class="landscape" src="img/5dc19b5f-f679-4970-a94f-dbaac80ca947.jfif">
+			<hr>
+			<img class="landscape" src="img/4ba9b58b-6bb8-42db-89ea-68094deca78a.jfif">
+			<hr>
+			<img class="landscape" src="img/70bf11ea-3162-440c-8d73-5a906a3091f1.jfif">
+			<hr>
+			<img class="landscape" src="img/back.jpg">
+			<hr>
+			<img class="landscape" src="img/d8c6da5b-0540-4ba4-9918-8408e9923560.jfif">
+			<hr>
+			<img class="landscape" src="img/123.jpg">
+			<hr>
+			<img class="pot" src="img/bac32e92-142d-484d-8b9c-6c42996108fd.jfif">
+			<img class="pot" src="img/b4be043d-0c82-43b8-ad0a-c2e0819835bc.jfif" align="right">
+			<hr>
+			<img class="pot" src="img/b7e9653f-f97c-4fae-82ae-3a6164f52451.jfif">
+			<img class="pot" src="img/ac24cf2a-f6c7-4f8f-9aad-aaf91f77da06.jfif" align="right">
+			<hr>
+			<img class="pot" src="img/c557fad8-0785-4668-ac4a-075b63cc7625.jfif">
+			<img class="pot" src="img/d7d0a601-5b7f-45c1-b1f3-6cd9858d4e41.jfif" align="right">
+			<hr>
+			<img class="pot" src="img/a96146e5-9d88-4241-a137-1c7645e4e5fd.jfif">
+			<img class="pot" src="img/d97fb0e2-c0c1-4ad6-a931-c6f4240aca00.jfif" align="right">
+			<hr>
+			<img class="pot" src="img/8d77922b-5938-4a38-95bc-161858f7ca88.jfif">
+			<img class="pot" src="img/6e7e3cb4-998b-460b-a62c-0671d29058c0.jfif" align="right">
+			<hr>
+		</div>
+		</div>
+		<script type="text/javascript">
+			const backToTopButton = document.querySelector("#back-to-top-btn");
+
+window.addEventListener("scroll", scrollFunction);
+
+function scrollFunction() {
+  if (window.pageYOffset > 300) { // Show backToTopButton
+    if(!backToTopButton.classList.contains("btnEntrance")) {
+      backToTopButton.classList.remove("btnExit");
+      backToTopButton.classList.add("btnEntrance");
+      backToTopButton.style.display = "block";
+    }
+  }
+  else { // Hide backToTopButton
+    if(backToTopButton.classList.contains("btnEntrance")) {
+      backToTopButton.classList.remove("btnEntrance");
+      backToTopButton.classList.add("btnExit");
+      setTimeout(function() {
+        backToTopButton.style.display = "none";
+      }, 250);
+    }
+  }
+}
+
+backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+// function backToTop() {
+//   window.scrollTo(0, 0);
+// }
+
+function smoothScrollBackToTop() {
+  const targetPosition = 0;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 750;
+  let start = null;
+  
+  window.requestAnimationFrame(step);
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+    if (progress < duration) window.requestAnimationFrame(step);
+  }
+}
+
+function easeInOutCubic(t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t + b;
+	t -= 2;
+	return c/2*(t*t*t + 2) + b;
+};
+		</script>
+		<style type="text/css">
+			*{
+	padding: 0;
+	margin: 0;
+}
+nav{
+  width: 100%;
+  height: 15vh;
+  background: rgba(0,0,0,0.2);
+  color: white; display: flex; justify-content: space-between;
+  align-items: center; text-transform: 
+}
+hr{
+	width: 100%;
+	height: 20px;
+	background-color: #8c7ae6;
+	color: #8c7ae6;
+}
+.logob{
+  width: 25%; text-align: center; justify-content: center; text-decoration: none; text-shadow: (0,0,0,0.2) ; padding: 30px;
+  color: rgba(0,0,0,0.9);}
+  .photos{
+
+  }
+ .landscape{
+ 	width: 100%;
+ 	height:  780px;
+ }
+ .pot{
+ 	width: 49.9%;
+ 	height: 780px;
+ }
+ #back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #333;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+}
+#back-to-top-btn:hover, #back-to-top-btn:focus {
+  background-color: #333;
+  color: #fff;  
+}
+
+@media(max-width: 992px) {
+  .container { padding: 20px 100px; }
+  #back-to-top-btn { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; }
+}
+@media(max-width:768px) {
+  body { font-size: 16px; }
+  .container { padding: 10px 50px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  hr { margin: 30px 0; }
+  #back-to-top-btn { font-size: 18px; width: 32px; height: 32px; bottom: 6px; right: 6px; }
+}
+
+/* Animations */
+.btnEntrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+/* zoomIn */
+/* @keyframes btnEntrance { 
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 1;
+  }    
+} */
+
+/* fadeInUp */
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;  
+  animation-name: btnExit;
+}
+/* zoomOut */
+/* @keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+} */
+
+/* fadeOutDown */
+@keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+		</style>
+</body>
+</html>
